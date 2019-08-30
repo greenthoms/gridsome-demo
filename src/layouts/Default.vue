@@ -7,9 +7,16 @@
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about">About</g-link>
+        <g-link class="nav__link" to="/test">Test</g-link>
+        <g-link class="nav__link" to="/form">Form</g-link>
       </nav>
     </header>
-    <slot/>
+    <transition name="fade" appear>
+      <main>
+        <slot/>
+      </main>
+    </transition>
+
   </div>
 </template>
 
@@ -30,7 +37,7 @@ body {
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 1000px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -46,5 +53,13 @@ body {
 
 .nav__link {
   margin-left: 20px;
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
